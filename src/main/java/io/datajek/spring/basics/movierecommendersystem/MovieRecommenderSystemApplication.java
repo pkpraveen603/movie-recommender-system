@@ -9,7 +9,7 @@ public class MovieRecommenderSystemApplication {
 
 	public static void main(String[] args) {
 		//SpringApplication.run(MovieRecommenderSystemApplication.class, args);
-		RecommenderImplementation recommender = new RecommenderImplementation();
+		RecommenderImplementation recommender = new RecommenderImplementation(new CollaborativeFilter());
 		String[] result = recommender.recommendMovies("Wonder Woman");
 		System.out.println(Arrays.toString(result));
 	}
