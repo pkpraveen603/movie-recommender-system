@@ -7,18 +7,21 @@ import org.springframework.stereotype.Component;
 public class RecommenderImplementation {
 
 
-    private Filter filter;
+//    private Filter filter;
+//
+//
+//    public RecommenderImplementation(Filter filter){
+//        super();
+//        this.filter = filter;
+//    }
 
     @Autowired
-    public RecommenderImplementation(Filter filter){
-        super();
-        this.filter = filter;
-    }
+    private Filter collaborativeFilter;
 
     public String[] recommendMovies(String movie){
         //ContentBasedFilter filter = new ContentBasedFilter();
-        System.out.println("Name of filter in use: "+filter+".\n");
-        String[] results = filter.getRecommendations("Wonder Woman");
+        System.out.println("Name of filter in use: "+collaborativeFilter+".\n");
+        String[] results = collaborativeFilter.getRecommendations("Wonder Woman");
         return results;
     }
 
